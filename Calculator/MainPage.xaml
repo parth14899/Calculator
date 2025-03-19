@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <!-- First Number Input -->
+            <Label Text="Enter first number:"
+               VerticalOptions="Center" 
+               HorizontalOptions="Start" />
+            <Entry x:Name="firstNumberEntry"
+               Placeholder="Enter first number"
+               Keyboard="Numeric" />
+
+            <!--Bouns-->
+            <Label Text="Adjust first number:" />
+            <Slider x:Name="firstNumberSlider" Minimum="0" Maximum="100" ValueChanged="OnSliderValueChanged" />
+            <Label x:Name="firstNumberLabel" Text="First number: 0" />
+
+            <!-- Second Number Input -->
+            <Label Text="Enter second number:"
+               VerticalOptions="Center" 
+               HorizontalOptions="Start" />
+            <Entry x:Name="secondNumberEntry"
+               Placeholder="Enter second number"
+               Keyboard="Numeric" />
+
+            <!-- Operator Picker -->
+            <Label Text="Choose an operation:"
+               VerticalOptions="Center" 
+               HorizontalOptions="Start" />
+            <Picker x:Name="operationPicker">
+                <Picker.Items>
+                    <x:String>+</x:String>
+                    <x:String>-</x:String>
+                    <x:String>*</x:String>
+                    <x:String>/</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Calculate Button -->
+            <Button Text="Calculate"
+                Clicked="OnCalculateClicked" />
+
+            <!-- Result Label -->
+            <Label x:Name="resultLabel"
+               Text="Result: "
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+
+            <!-- Option to Calculate Again clear the input-->
+            <Button Text="Calculate again"
+                Clicked="OnCalculateAgainClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
